@@ -1,4 +1,4 @@
-function PopupWithImage(props) {
+function ImagePopup(props) {
     return (
         <div className={`overlay overlay_type_popup-image ${props.isOpen && 'overlay_opened'}`}>
             <div className="overlay__container overlay__container_type_popup-image">
@@ -12,4 +12,4 @@ function PopupWithImage(props) {
     )
 }
 
-export default PopupWithImage;
+export default ImagePopup;

@@ -2,7 +2,7 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import PopupWithForm from './PopupWithForm'
-import PopupWithImage from './PopupWithImage'
+import ImagePopup from './ImagePopup'
 import React from 'react'
 import { useState } from 'react'
 
@@ -77,7 +77,7 @@ function App() {
                 <span className="input-link-error form__input-error"></span>
             </PopupWithForm>
 
-            <PopupWithImage
+            <ImagePopup
                 card={selectedCard}
                 isOpen={isCardPopupOpen}
                 onClose={closeAllPopups}
