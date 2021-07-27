@@ -1,7 +1,7 @@
 function Card(props) {
     return (
         <li className="elements__item">
-            <img src={props.card.link} alt="фотография" className="elements__image" onClick={handleClick} />
+            <img src={props.card.link} alt={props.card.name} className="elements__image" onClick={handleClick} />
             <div className="elements__container">
                 <h2 className="elements__header">{props.card.name}</h2>
                 <div className="elements__container elements__container_likes">

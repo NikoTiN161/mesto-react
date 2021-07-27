@@ -7,34 +7,34 @@ import React from 'react'
 import { useState } from 'react'
 
 function App() {
-    const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
-    const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
-    const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
-    const [isCardPopupOpen, setCardPopupOpen] = useState(false);
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isCardPopupOpen, setIsCardPopupOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
 
     function handleEditAvatarClick() {
-        setEditAvatarPopupOpen(true);
+        setIsEditAvatarPopupOpen(true);
     }
 
     function handleEditProfileClick() {
-        setEditProfilePopupOpen(true);
+        setIsEditProfilePopupOpen(true);
     }
 
     function handleAddPlaceClick() {
-        setAddPlacePopupOpen(true);
+        setIsAddPlacePopupOpen(true);
     }
 
     function handleCardClick(card) {
-        setCardPopupOpen(true);
+        setIsCardPopupOpen(true);
         setSelectedCard(card);
     }
 
     function closeAllPopups() {
-        setEditAvatarPopupOpen(false);
-        setEditProfilePopupOpen(false);
-        setAddPlacePopupOpen(false);
-        setCardPopupOpen(false);
+        setIsEditAvatarPopupOpen(false);
+        setIsEditProfilePopupOpen(false);
+        setIsAddPlacePopupOpen(false);
+        setIsCardPopupOpen(false);
     }
 
     return (
@@ -47,7 +47,9 @@ function App() {
                 title="Обновить аватар"
                 name="update-avatar"
                 isOpen={isEditAvatarPopupOpen}
-                onClose={closeAllPopups} >
+                onClose={closeAllPopups}
+                buttonText="Сохранить"
+            >
                 <input type="url" id="input-url" required name="link" placeholder="Ссылка на картинку"
                     className="form__input form__input_type_link" />
                 <span className="input-url-error form__input-error"></span>
@@ -56,7 +58,9 @@ function App() {
                 title="Редактировать профиль"
                 name="edit-profile"
                 isOpen={isEditProfilePopupOpen}
-                onClose={closeAllPopups} >
+                onClose={closeAllPopups}
+                buttonText="Сохранить"
+            >
                 <input type="text" id="input-name" required minLength="2" maxLength="40" name="name"
                     placeholder="Имя профиля" className="form__input form__input_type_name" />
                 <span className="input-name-error form__input-error"></span>
@@ -68,7 +72,9 @@ function App() {
                 title="Новое место"
                 name="add-card"
                 isOpen={isAddPlacePopupOpen}
-                onClose={closeAllPopups} >
+                onClose={closeAllPopups}
+                buttonText="Сохранить"
+            >
                 <input type="text" id="input-title" required minLength="2" maxLength="30" name="name"
                     placeholder="Название" className="form__input form__input_type_title" />
                 <span className="input-title-error form__input-error"></span>
