@@ -8,7 +8,7 @@ import ImagePopup from './ImagePopup'
 import ConfirmPopup from './ConfirmPopup'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import api from '../utils/Api'
+import api from '../utils/api'
 import { CurrentUserContext } from '../contexts/CurrentUserContext'
 
 function App() {
