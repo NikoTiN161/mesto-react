@@ -1,4 +1,4 @@
-import {options} from './constants'
+import { options } from './constants'
 
 class Api {
     constructor(options) {
@@ -72,7 +72,7 @@ class Api {
             .then(this._checkResponse);
     }
 
-    likeCard(id) {
+    _likeCard(id) {
         return fetch(`${this._baseUrl}/cards/likes/${id}`, {
             headers: this._headers,
             method: 'PUT',
@@ -80,12 +80,20 @@ class Api {
             .then(this._checkResponse);
     }
 
-    removeLikeCard(id) {
+    _removeLikeCard(id) {
         return fetch(`${this._baseUrl}/cards/likes/${id}`, {
             headers: this._headers,
             method: 'DELETE',
         })
             .then(this._checkResponse);
+    }
+
+    changeLikeCardStatus(id, isChange) {
+        if (isChange) {
+            return this._likeCard(id);
+        } else {
+            return this._removeLikeCard(id);
+        }
     }
 }
 

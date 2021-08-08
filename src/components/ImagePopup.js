@@ -1,6 +1,6 @@
 function ImagePopup(props) {
     return (
-        <div className={`overlay overlay_type_popup-image ${props.isOpen && 'overlay_opened'}`}>
+        <div className={`overlay overlay_type_popup-image ${props.isOpen && 'overlay_opened'}`} onClick={props.onClickOverlay}>
             <div className="overlay__container overlay__container_type_popup-image">
                 <button type="button" className="overlay__close" onClick={props.onClose}></button>
                 <figure className="popup-image">
