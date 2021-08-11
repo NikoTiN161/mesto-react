@@ -47,7 +47,6 @@ function App() {
     }
 
     function handleDeleteClick(card) {
-        setIsSubmitting(true);
         api.deleteCard(card._id)
             .then(() => {
                 setCards((state) => state.filter((c) => c._id !== card._id));
